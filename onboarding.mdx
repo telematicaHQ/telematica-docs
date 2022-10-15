@@ -1,0 +1,129 @@
+---
+title: "Onboarding and Setup"
+description: "This page will help you get started with Telematica EV APIs"
+---
+
+## ⚡️ Telematica EV APIs
+
+**With Telematica, you can :**
+
+- Authenticate and connect your customer's EV using a secure end-user-consent
+  flow.
+  - ✅ One time secure consent from customer (< 30 sec)
+  - ✅ A pure software solution, no need of installing hardwares
+- Get live vehicle data from connected EVs to build solutions on top of it
+  - ✅ Compatible with 26+ EV brands across globe
+  - ✅ Single standardized API for you, we do the heavylifting behind the scenes
+
+## 🎬 Virtual Onboarding
+
+<iframe
+  className="w-full h-96"
+  href="https://player.gotolstoy.com/2ysozsq2xg2a5?host"
+  src="https://player.gotolstoy.com/2ysozsq2xg2a5?host"
+/>
+
+## 🔧 Sandbox Access
+
+### Get your developer keys and start using sandbox mode
+
+In case you don't already have your app-id and secret, reach out to us on
+[mail](mailto:aditya@telematica.so) to get one issued. You'll need to include
+these credentials with all API calls.
+
+Here's a sample of how app-id and secret will look like:
+
+```json
+{
+  "app-id": "40a67cba-545f-495e-bade-73df342a80cd",
+  "secret": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MGE2N2NiYS01NDVmLTQ5NWUtYmFkZS03M2RmMzQyYTgwY2QiLCJpYXQiOjE1MTYyMzkwMjJ9.zyNHt_rNlcN0NlCkvTYHH0RYKaBn9I9lpFeYc85HXA0"
+}
+```
+
+Once you have the API keys with you, you can start using the APIs in sandbox
+mode right away, no action is needed from your side.
+
+Sandbox mode will allow you to
+[sign up with real vehicles](/reference/consent-ui-parameters), use our APIs to
+get their data using [docs UI](/reference/vehicle-data-v2) and test out
+end-to-end flow.
+
+To use the sandbox mode, use the following link to connect a vehicle:
+
+Text
+
+```md
+https://us.telematica.so/connect?app=<app-id>&user=<random_string>&region=<US,
+EU or IN>
+```
+
+For more information on the above URL, see
+[Consent UI and custom query parameters](/reference/consent-ui-parameters)
+
+When you are ready to take Telematica APIs to production, move on to step 2
+below ↓
+
+---
+
+## Steps for production access (\<10 mins)
+
+### Create a POST callback endpoint in you backend
+
+When a user connects a vehicle to your application, Telematica will send
+vehicle-id of authorized vehicles(s) through a POST webhook call to your
+backend. You can store these `vehicleId`s' in your database and pair them with
+users in your app.
+
+[This guide](/reference/callback-endpoint) will walk you through all the steps
+required from your end to make a callback endpoint:
+
+### Embed the consent flow in your app
+
+<Tip>
+More about user consent
+
+User data is accessible for your app via Telematica's EV APIs only after
+explicit permission grant by user in form of OEM app credentials. This is a
+one-time process from user's end, and they are entitled to opt out of
+data-sharing agreement as per their wish.
+
+</Tip>
+
+Embed a web-view in your mobile app, pointing at the following URL:
+
+```md
+https://us.telematica.so/connect?app=<app-id>&user=<user_id_in_your_db>&region=<region>
+```
+
+where `region` is one of `US`, `EU` or `IN`.
+
+You can customize the page for each instance using supported query parameters
+found in the following page:
+
+<Card
+  title="Consent UI Guide"
+  icon={regular("book-open")}
+  href="/guides/consent-ui-parameters"
+>
+  Consent UI enable your users to securely provide consent to their EV data to
+  you. You can use the following information to build a customised url and
+  redirect your customer to it.
+</Card>
+
+<Tip>
+**Skipping pages**
+
+This flow is fully customizable as per your app's requirements. You can also
+choose to skip directly to the OEM login screen if
+
+1. You know the brand of vehicle beforehand and
+2. You have already taken user's consent in your own app (includes accepting
+   Telematica's privacy policy)
+
+</Tip>
+
+### Access vehicle data through our Vehicle APIs
+
+Once the user has granted consent for your app to access their vehicle data, you
+can use [ Vehicle Data APIs](/reference/vehicle-data-v2) to fetch vehicle data
+from your backend.

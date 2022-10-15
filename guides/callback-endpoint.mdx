@@ -1,0 +1,110 @@
+---
+title: "Creating the POST callback endpoint"
+---
+
+## 1. Expose a POST endpoint in your backend
+
+Expose a POST endpoint (preferable ending with `/telematica-callback`) in you
+backend, which will receive callbacks.
+
+<Warning>
+**Enable CORS for the endpoint**
+
+Don't forget to enable CORS for the endpoint to accept callback information.
+
+</Warning>
+
+## 2. Configure your backend
+
+Configure your backend to save user-to-vehicle mapping in your database when a
+POST call comes in from Telematica on the above endpoint.
+
+You can expect the POST request body to follow this schema:
+
+```json
+{
+  "user": "userid_in_your_database", // user-id in your database, passed as query-param in first step
+  "vehicles": [
+    {
+      "vehicleId": "6ac03024a2b0fa158a16743f04fbbdd8", // vehicleId in Telematica's database
+      "registration": "GJ02QB2457" // Vehicle registration (only for India)
+    },
+    {
+      // Second vehicle, in case the user selected multiple vehicles to be paired
+      "vehicleId": "4f360b8044a852bac0db3f12a7610adf",
+      "registration": "MP09AS1322"
+    }
+  ]
+}
+```
+
+<Info>
+
+**For EU and US regions**
+
+The registration field will not be included in the callback for regions other
+than India. You can call the
+[/static-attributes](/reference/getstaticattributes) endpoint to get more info
+about the vehicle once it's connected to your app.
+
+</Info>
+
+## 3. Share the endpoint with Telematica
+
+Share the endpoints you've created with us over
+[Email](mailto:aditya@telematica.so) or [WhatsApp](https://wa.me/+919406862615).
+Also share the authentication token for endpoint if you have any.
+
+## FAQs
+
+### Why is there a callback endpoint?
+
+Once the end user logs in with their OEM credentials, we make a callback to your
+backend to pass on the information to your backend.
+
+The information shared includes `vehicleId` in our database, vehicle's
+registration number and `userId` in your database to map it to.
+
+### Sample POST request for testing
+
+Here is a sample cURL request:
+
+```bash
+curl --location --request POST 'https://yourapp.com/api/telematica-callback' \
+--header 'Authorization: Bearer QOkDgC532UGa9pK3L0a' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "user": "6141ab3b216714547b09815f",
+  "vehicles": [
+    {
+      "registration": "MP09AS3987",
+      "id": "61fe4a188a4c4d1ef9ba0b62"
+    }
+  ]
+}'
+```
+
+### Can I add an authentication token to the POST endpoint?
+
+Sure. Please make sure your backend accepts the token in following header
+format:
+
+```bash
+--header 'Authorization: Bearer QOkDgC532UGa9pK3L0a'
+```
+
+### Can I make different endpoints for different environments (`dev`, `stage`, `prod`) ?
+
+Yes. Telematica will hit the `prod` endpoint by default if no special query
+parameter is present.
+
+To indicate Telematica to make callback on any other endpoint, please add a
+`callbackUrl` parameter in the consent UI url :
+
+```bash
+https://us.telematica.so/connect?app=<app_id>&user=<user_id>&callbackUrl=https://dev.yourapp.com/api/telematica-callback
+```
+
+In case you have any other queries / suggestions regarding this, please contact
+us directly on [Email](mailto:aditya@telematica.so) or
+[WhatsApp](https://wa.me/+919406862615)

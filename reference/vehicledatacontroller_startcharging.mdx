@@ -1,0 +1,38 @@
+---
+title: "Start Charge"
+description: "Command the vehicle to start charging"
+api: "POST https://api.telematica.so/v2/vehicle-data/start-charge"
+---
+
+<Warning>
+  This endpoint is in beta rollout stage, [contact us](/reference/contact-us) to
+  get access to this endpoint
+</Warning>
+
+### Body Params
+
+<ParamField body="vehicleId" type="string" required>
+  24-char hex identifier for the vehicle. The owner must have provided consent
+  through Telematica consent flow.
+</ParamField>
+
+### Response
+
+<ParamField body="result" type="boolean" required>
+  Whether the action was successful or not
+</ParamField>
+
+<ParamField body="reason" type="string" required>
+  The reason for the failure, if any
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+     --url https://api.telematica.so/v2/vehicle-data/start-charge \
+     --header 'accept: application/json' \
+     --header 'content-type: application/json'
+```
+
+</RequestExample>

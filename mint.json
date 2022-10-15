@@ -1,0 +1,122 @@
+{
+  "name": "Telematica",
+  "logo": {
+    "light": "/images/logo/light.png",
+    "dark": "/images/logo/dark.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#2C9B5F",
+    "light": "#71D98C",
+    "dark": "#1A7041",
+    "ultraLight": "#E4F4EA",
+    "ultraDark": "#084423",
+    "background": {
+      "dark": "#0C120D"
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.telematica.so",
+    "auth": {
+      "method": "bearer"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Try the API",
+      "url": "https://hn-demo.telematica.so"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Book a demo",
+    "url": "https://calendly.com/abhishek-telematica/30min"
+  },
+  "anchors": [
+    {
+      "name": "API Reference",
+      "icon": "rectangle-terminal",
+      "url": "reference"
+    },
+    {
+      "name": "API Playground",
+      "icon": "circle-play",
+      "url": "https://hn-demo.telematica.so"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting started",
+      "pages": ["onboarding", "contact-us", "supported-ev-models-india"]
+    },
+    {
+      "group": "Products",
+      "pages": [
+        "products/vehicle-apis",
+        "products/unified-vehicle-apis",
+        "products/telematica-poller",
+        "products/webhooks",
+        "products/telematica-schedules-beta",
+        "products/telematica-routing-apis-in-alpha"
+      ]
+    },
+    {
+      "group": "Guides and How-To's",
+      "pages": [
+        "guides/consent-ui-parameters",
+        "guides/callback-endpoint",
+        "guides/expected-errors",
+        "guides/faqs"
+      ]
+    },
+    {
+      "group": "Telematica Vehicle APIs",
+      "pages": [
+        {
+          "group": "Vehicle Data - v2",
+          "pages": [
+            "reference/vehicledatacontroller_getsoc",
+            "reference/vehicledatacontroller_getrange",
+            "reference/vehicledatacontroller_getodo",
+            "reference/vehicledatacontroller_getlocation",
+            "reference/vehicledatacontroller_getchargingstatus",
+            "reference/vehicledatacontroller_getstaticattributes",
+            "reference/vehicledatacontroller_startcharging",
+            "reference/vehicledatacontroller_stopcharging"
+          ]
+        },
+        {
+          "group": "Testing Endpoints",
+          "pages": [
+            "reference/testing",
+            "reference/testing/vehicledatacontroller_getsoctest",
+            "reference/testing/vehicledatacontroller_getrangetest",
+            "reference/testing/vehicledatacontroller_getrangesoctest",
+            "reference/testing/vehicledatacontroller_getlocationtest",
+            "reference/testing/vehicledatacontroller_getchargingstatustest",
+            "reference/testing/vehicledatacontroller_getodotest",
+            "reference/testing/vehicledatacontroller_getstaticattributestest"
+          ]
+        },
+        {
+          "group": "Vehicle Data - v1",
+          "pages": [
+            "reference/vehicledatacontroller_getsocv1",
+            "reference/vehicledatacontroller_getrangev1",
+            "reference/vehicledatacontroller_getrangesocv1",
+            "reference/vehicledatacontroller_getlocationv1",
+            "reference/vehicledatacontroller_getchargingstatusv1",
+            "reference/vehicledatacontroller_getodov1",
+            "reference/vehicledatacontroller_getstaticattributesv1"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Sample callback endpoints",
+      "pages": ["reference/appcontroller_callback"]
+    }
+  ],
+  "classes": {
+    "topbarCtaButton": "inline-flex items-center space-x-1 px-4 py-1 shadow-sm text-sm font-medium rounded-full text-white bg-primary-dark hover:bg-primary-ultradark"
+  }
+}

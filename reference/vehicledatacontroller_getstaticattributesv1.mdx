@@ -1,0 +1,34 @@
+---
+title: "Static Attributes"
+description: "Get static attributes for a vehicle (like VIN, model, year etc.)"
+api: "GET https://api.telematica.so/v1/vehicle-data/static-attributes"
+---
+
+### Query Params
+
+<ParamField query="vehicleId" type="string" required>
+  24-char hex identifier for the vehicle. The owner must have provided consent
+  through Telematica consent flow.
+</ParamField>
+
+### Response
+
+<ParamField body="vin" type="string" required />
+
+<ParamField body="model" type="string" required />
+
+<ParamField body="year" type="number" required />
+
+<ParamField body="make" type="string" required />
+
+<ParamField body="registration" type="string" required />
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+     --url https://api.telematica.so/v1/vehicle-data/static-attributes \
+     --header 'accept: application/json'
+```
+
+</RequestExample>

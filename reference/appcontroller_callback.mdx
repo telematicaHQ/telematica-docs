@@ -1,0 +1,40 @@
+---
+title: "New vehicle connection callback"
+description:
+  "This is a dummy callback endpoint. Please share the POST callback endpoint
+  created in your app's backend with Telematica to get callback requests of
+  below format"
+api: "POST https://api.telematica.so/v1/callback"
+---
+
+Webhook fired when a new vehicle is connected to your app
+
+### Body Params
+
+<ParamField body="user" type="string" />
+
+<ParamField body="OBJECT" type="string" required>
+  <Expandable title="properties">
+    <ParamField body="registration" type="string" required />
+    <ParamField body="id" type="string" required />
+  </Expandable>
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+     --url https://api.telematica.so/v1/callback \
+     --header 'content-type: application/json' \
+     --data '
+{
+     "user": "user_id_in_your_db",
+     "vehicles": [
+          {
+               "registration": "MP09AS9987",
+               "id": "61fe4a188a4c4d1ef9ba0b62"
+          }
+     ]
+```
+
+</RequestExample>

@@ -1,0 +1,37 @@
+---
+title: "Test Charging Status"
+description: "Test the charging-status endpoint on a dummy vehicle"
+api: "GET https://api.telematica.so/v1/vehicle-data/charging-status/test"
+---
+
+You just need a valid token but not a valid vehicleId to test these endpoints.
+(You can use the example ids by clicking on input field and selecting example
+input)
+
+They will return dummy data in the same format as of Vehicle Data endpoints
+
+### Query Params
+
+<ParamField query="vehicleId" type="string" required>
+  24-char hex identifier for the vehicle. The owner must have provided consent
+  through Telematica consent flow.
+</ParamField>
+
+### Response
+
+<ParamField body="isCharging" type="boolean" required />
+
+<ParamField body="timestamp" type="number" required>
+  unix timestamp in milliseconds, time when data was fetched from OEM servers by
+  Telematica
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+     --url https://api.telematica.so/v1/vehicle-data/charging-status/test \
+     --header 'accept: application/json'
+```
+
+</RequestExample>
