@@ -1,0 +1,33 @@
+---
+title: "Range"
+description: "Get the current range of the vehicle in kms"
+api: "GET https://api.telematica.so/v1/vehicle-data/range"
+---
+
+### Query Params
+
+<ParamField query="vehicleId" type="string" required>
+  24-char hex identifier for the vehicle. The owner must have provided consent
+  through Telematica consent flow.
+</ParamField>
+
+### Response
+
+<ParamField body="range" type="number" required>
+  The range of the vehicle in km
+</ParamField>
+
+<ParamField body="timestamp" type="number" required>
+  unix timestamp in milliseconds, time when data was fetched from OEM servers by
+  Telematica
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+     --url https://api.telematica.so/v1/vehicle-data/range \
+     --header 'accept: application/json'
+```
+
+</RequestExample>

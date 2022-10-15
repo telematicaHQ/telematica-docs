@@ -1,0 +1,48 @@
+---
+title: "Consent UI and custom query parameters"
+description: "Consent UI enable your users to securely provide consent to their EV data to
+you. You can use the following information to build a customised url and
+redirect your customer to it."
+---
+
+### Base URL
+
+This is the entry point to consent UI from your app.
+
+```bash
+https://us.telematica.so/connect
+```
+
+### Query Params
+
+<ParamField query="app" type="string" required>
+  app-id for your app
+</ParamField>
+
+<ParamField query="user" type="string" required>
+  user-id of user in your database
+</ParamField>
+
+<ParamField query="brand" type="string">
+  brand of the vehicle, if known beforehand. This will skip the brand selection
+  screen
+</ParamField>
+
+<ParamField query="callbackUrl" type="string">
+  callback url where we will send a POST request with authenticated vehicle and
+  user data. If not provided, the default one configured in our backend will be
+  used. The callback URL must be registered with Telematica beforehand.
+  Callbacks will not work in sandbox mode. For more details [contact
+  us](mailto:aditya@telematica.so)
+</ParamField>
+
+<ParamField query="redirectUrl" type="string">
+  url where we will redirect the end user using webview browser redirect. This
+  will typically be an app URL (`yourApp://somepage`). The redirect URL schema
+  must be registered with Telematica beforehand.
+</ParamField>
+
+<ParamField query="region" type="string">
+  one of `IN`, `US` or `EU`. This will show only the supported EV models on
+  brand-selection page.
+</ParamField>

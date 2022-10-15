@@ -1,0 +1,68 @@
+---
+title: "Expected Errors"
+description: "Here are some edge case errors which you can preemptively handle in you backend"
+---
+
+### RELOGIN_REQUIRED
+
+```json
+{
+  "statusCode": 401,
+  "message": "Account disconnected because user revoked tokens or changed password. Please reconnect the vehicle using Connect flow",
+  "error": "RELOGIN_REQUIRED"
+}
+```
+
+**Action Item** \- The user has to go through the consent flow again.
+
+---
+
+### USER_CONSENT_REQUIRED
+
+```json
+{
+  "statusCode": 403,
+  "message": "The vehicle is not accessible to this app. Please login on the app with end user credentials",
+  "error": "USER_CONSENT_REQUIRED"
+}
+```
+
+**Action Item** \- The user has to go through the consent flow.
+
+---
+
+### VEHICLE_DATA_FETCH_FAILED
+
+```json
+{
+  "statusCode": 500,
+  "message": "Error in fetching <data point>",
+  "error": "VEHICLE_DATA_FETCH_FAILED"
+}
+```
+
+**Action Item** \- Nothing from your end. We'll monitor these errors and keep you updated if something is wrong. Meanwhile, you can retry these requests with reasonable frequency.
+
+---
+
+### NOT_SUPPORTED
+
+```json
+{
+  "statusCode": 405,
+  "message": "Fetching vehicle location not supported for current model",
+  "error": "NOT_SUPPORTED"
+}
+```
+
+---
+
+### INTERNAL_SERVER_ERROR
+
+```json
+{
+  "statusCode": 500,
+  "message": "Unknown error occurred. Our team will investigate this issue.",
+  "error": "INTERNAL_SERVER_ERROR"
+}
+```
