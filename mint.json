@@ -45,6 +45,10 @@
   ],
   "navigation": [
     {
+      "group": "Welcome",
+      "pages": ["welcome/introduction"]
+    },
+    {
       "group": "Getting started",
       "pages": ["onboarding", "contact-us", "supported-ev-models-india"]
     },
