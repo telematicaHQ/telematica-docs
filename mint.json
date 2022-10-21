@@ -46,17 +46,11 @@
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["welcome/introduction"]
-    },
-    {
-      "group": "Getting started",
-      "pages": ["onboarding", "contact-us", "supported-ev-models-india"]
+      "pages": ["welcome/introduction", "welcome/connect-ui", "welcome/unified-vehicle-apis", "welcome/quick-start"]
     },
     {
       "group": "Products",
       "pages": [
-        "products/vehicle-apis",
-        "products/unified-vehicle-apis",
         "products/telematica-poller",
         "products/webhooks",
         "products/telematica-schedules-beta",

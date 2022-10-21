@@ -6,24 +6,39 @@ Telematica API enables developers to gain access to telematics and battery data,
 
 ### Overview
 To start accessing live data from any EV, you must first understand two major components:
-1. Connect UI: A white-labeled webview to authenticate and connect the end-users EV to your service (fully customizable)
-2. Unified Vehicle APIs: Single API to query live data across 26+ EV brands 
-
+<CardGroup cols={2}>
+  <Card title="Connect UI" icon={duotone("plug-circle-check")} color="#16a34a" href="/welcome/connect-ui">
+    A webview to authenticate & connect the end-users EV to your service (white-labeled)
+  </Card>
+  <Card title="Unified Vehicle APIs" icon={duotone("bolt")} color="#16a34a" href="/welcome/unified-vehicle-apis">
+    Single API to query live data & manage charging across 26+ EV brands
+  </Card>
+</CardGroup>
 
 ### Products
 Use our plug-and-play modules to get your product up and running quickly.
 
 <CardGroup cols={2}>
-  <Card title="First Card" icon={duotone("square-1")} color="#ea5a0c">
-    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+  
+  <Card title="Poller" icon={duotone("database")} color="#ea5a0c" href="/products/webhooks">
+    Receive raw or aggregated data at a custom frequency
   </Card>
-  <Card title="Second Card" icon={duotone("square-2")} color="#0285c7">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  <Card title="Schedules" icon={duotone("clock")} color="#ea5a0c">
+    Schedule actions for EVs (Charging, HVAC controls)
   </Card>
-  <Card title="Third Card" icon={duotone("square-3")} color="#16a34a">
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-  </Card>
-  <Card title="Fourth Card" icon={duotone("square-4")} color="#dc2626">
-    Excepteur sint occaecat cupidatat non proident
+  <Card title="Webhooks" icon={duotone("bell")} color="#ea5a0c">
+Create webhooks for events such as when the charging session begins or ends, or when the battery level reaches a preset SOC
+ </Card>
+  <Card title="Routing (beta)" icon={duotone("route")} color="#ea5a0c">
+Powerful EV routing based on real-time EV data that takes into account terrain, temperature, and charger availability
   </Card>
 </CardGroup>
+
+### Quick Start
+Excited to make your first API call? 🥳
+This page will guide you through connecting an EV and making your first API call.
+
+<Card title="Quick Start" icon={duotone("forward")} color="#16a34a" href="/welcome/quick-start">
+  Get your developer keys and make your first API call
+</Card>
+
