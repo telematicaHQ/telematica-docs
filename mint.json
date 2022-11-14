@@ -35,7 +35,7 @@
     {
       "name": "API Reference",
       "icon": "rectangle-terminal",
-      "url": "reference"
+      "url": "https://telematica.readme.io/reference/vehicledatacontroller_getsoc"
     },
     {
       "name": "API Playground",
