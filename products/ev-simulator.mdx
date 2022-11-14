@@ -1,13 +1,27 @@
 ---
-title: "Charging scheduling for fleets"
-description: "Plug and play chrging scheduling module for fleet operators"
+title: "EV Simulator"
+description: "Test the use case that you are building in various scenarios"
 ---
 
-Overcome range anxiety using our EV route planner.
+We've built an EV simulator specifically to help you quickly test the use case that you are building in various scenarios without relying on a real vehicle.
 
-The smart route planner accounts for vehicle state, temperature, weather,
-traffic and multiple other factors and provides you with optimal route planned
-tailored to your vehicle.
+![EV Simulator](/images/reference/ev-simulator.png "EV Simulator")
+
+ 
+ There are currently 4 types of EVs available:
+ 1. __Auto-updating simulated vehicle (driving & charging):__ 
+ An EV that drives during the day time and charges overnight. 
+
+2. __Auto-updating simulated vehicle (charging only):__ 
+ An EV that is always being charged where you can also customize factors affecting the charging speed (EV battery size, State of Charge, Max. charging rate of EV, Max. charging rate of chargepoint, Environmental factor).
+
+3. __Auto-updating simulated vehicle (drivig only):__ 
+ An EV that is always driving where you customise the trip parameters like start, stop location, speed, climate control and occupancy.
+
+4. __Customizable simulated vehicle:__
+A custom EV, where you can set custom values for SoC, Range, Location, Odometer, and Charging status.
+
+
 
 <Card
   title="Contact us"
