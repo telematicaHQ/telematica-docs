@@ -65,53 +65,6 @@
         "guides/expected-errors",
         "guides/faqs"
       ]
-    },
-    {
-      "group": "Telematica Vehicle APIs",
-      "pages": [
-        {
-          "group": "Vehicle Data - v2",
-          "pages": [
-            "reference/vehicledatacontroller_getsoc",
-            "reference/vehicledatacontroller_getrange",
-            "reference/vehicledatacontroller_getodo",
-            "reference/vehicledatacontroller_getlocation",
-            "reference/vehicledatacontroller_getchargingstatus",
-            "reference/vehicledatacontroller_getstaticattributes",
-            "reference/vehicledatacontroller_startcharging",
-            "reference/vehicledatacontroller_stopcharging"
-          ]
-        },
-        {
-          "group": "Testing Endpoints",
-          "pages": [
-            "reference/testing",
-            "reference/testing/vehicledatacontroller_getsoctest",
-            "reference/testing/vehicledatacontroller_getrangetest",
-            "reference/testing/vehicledatacontroller_getrangesoctest",
-            "reference/testing/vehicledatacontroller_getlocationtest",
-            "reference/testing/vehicledatacontroller_getchargingstatustest",
-            "reference/testing/vehicledatacontroller_getodotest",
-            "reference/testing/vehicledatacontroller_getstaticattributestest"
-          ]
-        },
-        {
-          "group": "Vehicle Data - v1",
-          "pages": [
-            "reference/vehicledatacontroller_getsocv1",
-            "reference/vehicledatacontroller_getrangev1",
-            "reference/vehicledatacontroller_getrangesocv1",
-            "reference/vehicledatacontroller_getlocationv1",
-            "reference/vehicledatacontroller_getchargingstatusv1",
-            "reference/vehicledatacontroller_getodov1",
-            "reference/vehicledatacontroller_getstaticattributesv1"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Sample callback endpoints",
-      "pages": ["reference/appcontroller_callback"]
     }
   ],
   "classes": {
