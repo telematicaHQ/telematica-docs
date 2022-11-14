@@ -51,10 +51,10 @@
     {
       "group": "Products",
       "pages": [
-        "products/telematica-poller",
+        "products/poller",
         "products/webhooks",
-        "products/telematica-schedules-beta",
-        "products/telematica-routing-apis-in-alpha"
+        "products/schedules",
+        "products/charging-scheduling"
       ]
     },
     {
