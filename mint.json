@@ -54,7 +54,7 @@
         "products/poller",
         "products/webhooks",
         "products/schedules",
-        "products/charging-scheduling"
+        "products/ev-simulator"
       ]
     },
     {
