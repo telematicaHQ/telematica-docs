@@ -31,6 +31,20 @@ description: "Here are some edge case errors which you can preemptively handle i
 
 ---
 
+### SERVICE_UNAVAILABLE
+
+```json
+{
+  "statusCode": 503,
+  "message": "Temporary connectivity issue. can't reach the vehicle.",
+  "error": "SERVICE_TEMPORARILY_UNAVAILABLE"
+}
+```
+
+We were unable to fetch vehicle data due to downtime on OEM servers / vehicle being out of connectivity range. Please try again later.
+
+---
+
 ### VEHICLE_DATA_FETCH_FAILED
 
 ```json
