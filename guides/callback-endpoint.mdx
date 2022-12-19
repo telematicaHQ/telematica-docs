@@ -27,11 +27,19 @@ You can expect the POST request body to follow this schema:
   "vehicles": [
     {
       "vehicleId": "6ac03024a2b0fa158a16743f04fbbdd8", // vehicleId in Telematica's database
-      "registration": "GJ02QB2457" // Vehicle registration (only for India)
+      "vin": "5YJ3E7EB1LFXXXXXX",
+      "make": "TESLA", 
+      "model":"Model 3",
+      "year": 2021,
+      "registration": "GJ02QB2457" // Vehicle registration (only for Indian vehicles)
     },
     {
       // Second vehicle, in case the user selected multiple vehicles to be paired
       "vehicleId": "4f360b8044a852bac0db3f12a7610adf",
+      "vin": "3MW5P9J03N8CXXXXX",
+      "make": "BMW",
+      "model":"330e x-Drive",
+      "year": 2021,
       "registration": "MP09AS1322"
     }
   ]
