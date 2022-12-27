@@ -1,0 +1,38 @@
+---
+title: "Reliable Commands"
+description: "Issue commands to a vehicle, reliably and efficiently"
+---
+
+## Introduction
+Telematica reliable commands is a feature that allows you to issue commands to a vehicle or device in a reliable and efficient manner. 
+
+You can simply send the command to our system and "fire and forget" - we take care of the rest. 
+This includes retrying the command if necessary, monitoring the progress of command execution, and performing sanity checks. 
+
+Once the command has been successfully executed, we will send a webhook callback to inform you of the outcome. 
+If the execution cannot be confirmed or if the command fails, we will still send you a callback with the relevant information. 
+
+
+## Command States
+Additionally, after issuing a command, you can query the state of execution of a command at any time.
+Here are some verbose states you might see:
+
+- "Sending command to vendor"
+- "Command sent to vendor, waiting for vendor status API to reflect result"
+- "Result confirmed"
+- "Result cannot be confirmed in time"
+- "Command failed due to following reason: {reason}"
+
+You can find the full list of states and their encoding for in the documentation.
+
+![Commands](/images/reference/commands.png "Commands")
+
+
+---
+
+Some sample use cases are:
+
+1. Start / stop charging
+2. Lock / unlock doors
+3. HVAC commands (e.g. turn on AC, set temperature)
+

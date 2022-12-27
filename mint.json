@@ -52,6 +52,7 @@
       "group": "Products",
       "pages": [
         "products/poller",
+        "products/commands",
         "products/webhooks",
         "products/schedules",
         "products/ev-simulator"
