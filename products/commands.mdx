@@ -4,12 +4,11 @@ description: "Issue commands to a vehicle, reliably and efficiently"
 ---
 
 ## Introduction
-Telematica reliable commands is a feature that allows you to issue commands to a vehicle or device in a reliable and efficient manner. 
 
-You can simply send the command to our system and "fire and forget" - we take care of the rest. 
+Simply "fire and forget" the command to our system - and we take care of the rest. 
 This includes retrying the command if necessary, monitoring the progress of command execution, and performing sanity checks. 
 
-Once the command has been successfully executed, we will send a webhook callback to inform you of the outcome. 
+Once the command has been successfully executed, Telematica will send a webhook callback to inform you of the outcome. 
 If the execution cannot be confirmed or if the command fails, we will still send you a callback with the relevant information. 
 
 
@@ -25,10 +24,15 @@ Here are some verbose states you might see:
 
 You can find the full list of states and their encoding for in the documentation.
 
+---
+## How it works
+Under the hood, we orchestrate multiple systems of Telematica APIs to ensure maximum reliability and efficiency.
+
 ![Commands](/images/reference/commands.png "Commands")
 
 
 ---
+## Use cases
 
 Some sample use cases are:
 
