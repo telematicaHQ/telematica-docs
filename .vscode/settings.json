@@ -1,8 +1,14 @@
 {
     "cSpell.enabled": true,
     "cSpell.words": [
+        "HVAC",
         "iframe",
+        "RELOGIN",
         "telematica",
+        "telematics",
         "userid"
+    ],
+    "cSpell.enableFiletypes": [
+        "mdx"
     ]
 }
