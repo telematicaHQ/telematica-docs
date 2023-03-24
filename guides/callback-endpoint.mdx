@@ -32,6 +32,7 @@ You can expect the POST request body to follow this schema:
       "model":"Model 3",
       "year": 2021,
       "registration": "GJ02QB2457" // Vehicle registration (only for Indian vehicles)
+      "engineType": "ELECTRIC" // can be ELECTRIC , HYBRID or ICE
     },
     {
       // Second vehicle, in case the user selected multiple vehicles to be paired
@@ -40,7 +41,8 @@ You can expect the POST request body to follow this schema:
       "make": "BMW",
       "model":"330e x-Drive",
       "year": 2021,
-      "registration": "MP09AS1322"
+      "registration": "MP09AS1322",
+      "engineType": "HYBRID"
     }
   ]
 }
